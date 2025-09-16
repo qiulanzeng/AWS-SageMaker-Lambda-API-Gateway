@@ -20,8 +20,17 @@
   - AWS console -> IAM -> Roles -> click 'ml-model-lambda-role-...' -> click Policy name (eg. AWSLambdaBasicExecutionRole-...) -> Permissions -> {}JSON -> Edit Policy -> JSON -> addd the following codes:
     - {
         "Sid": "VisualEditor0",
-      "Effect": "Allow",
-      "Action": "sagemaker:InvokeEndpoint",
-      "Resource": "*"
+        "Effect": "Allow",
+        "Action": "sagemaker:InvokeEndpoint",
+        "Resource": "*"
       }
-    - click Visual (you can see SageMaker action)
+    - click Visual (you can see SageMaker action) -> Save changes
+    - 
+## Step3. Amazon API Gateway
+  - AWS console -> API Gateway -> Create API -> Rest API -> Build -> New API -> API name (eg. ml-model-api) -> Create API 
+  - Create resource (eg. api-ml-model)
+  - Create method -> method type (POST) -> choose your Lambda function (eg. ml-model-lambda) -> Create
+  - enter input in Request body -> Test
+  - Deploy API -> New Stage -> Stage name (eg. PROD)
+  - Invoke URL
+
