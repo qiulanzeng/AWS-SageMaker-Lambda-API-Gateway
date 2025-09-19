@@ -34,3 +34,24 @@
   - Deploy API -> New Stage -> Stage name (eg. PROD)
   - Invoke URL
 
+
+# SageMaker
+
+## 1. import sagemaker and boto3.
+## 2. create s3 bucket for saving code and model artifacts.
+## 3. import python libraries.
+## 4. download the data and save it as .csv file in the local folder, and take a look at it.
+## 5. split the data into training, validation, and testing dataset.
+## 6. convert the datasets to the recordIO-wrapped protobuf format, and upload this data to s3. 
+  - RecordIO-Protobuf format is used by SageMaker's built-in algorithms like:
+    - Linear Learner
+    - PCA
+    - K-Means
+    - Factorization Machines
+    - Random Cut Forest
+    - Laten Dirichlet Allocation
+
+## 7. Specify container images used for training and hostin SageMaker's linear-learner
+
+
+
